@@ -1,0 +1,530 @@
+/* Fondo para el formulario de registro */
+h1 {
+    color: green; /* Cambia el color del texto a verde */
+    font-size: 36px; /* Aumenta el tamaño de la fuente */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 20px 0; /* Añade espacio arriba y abajo del título */
+}
+
+.signup-background2 { 
+    background-image: url('../images/back.jpg');
+}
+
+/* Fondo para el formulario de inicio de sesión */
+.login-background { 
+    background-image: url('../images/background.jpg');
+}
+.users-background { 
+    background-image: url('../images/fond.jpg');
+}
+
+/* Estilos comunes */
+body { 
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Altura de la ventana */
+    font-family: 'Calibri', sans-serif; /* Tipo de fuente */
+    font-size: 20px; /* Tamaño de fuente */
+}
+
+/* Estilos para los inputs */
+.form-control {
+    width: 100%; /* Asegura que los inputs ocupen el 100% del ancho */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espacio entre inputs */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos del menú de navegación */
+.nav {
+    /*background-color: transparent; /* Fondo transparente del menú */
+    border: none; /* Elimina cualquier borde */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    display: flex; /* Alinea los enlaces horizontalmente */
+    justify-content: flex-end; /* Alinea el menú a la derecha */
+    list-style-type: none; /* Elimina los puntos de la lista */
+}
+
+/* Estilo de los enlaces del menú */
+.nav-link {
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Texto en negrita */
+    margin: 0 10px; /* Márgenes entre los enlaces */
+    padding: 10px 15px; /* Relleno alrededor del texto */
+    border: none; /* Elimina el borde */
+    text-decoration: none; /* Quita las decoraciones de los enlaces */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efecto de transición */
+}
+
+.nav-link:hover {
+    background-color: #fcfcfc; /* Fondo al pasar el mouse */
+    color: rgb(128, 128, 128); /* Color del texto al pasar el mouse */
+}
+
+/* Estilos del botón */
+.btn {
+    background-color: #146e38; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 25px; /* Bordes redondeados del botón */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    text-align: center; /* Centra el texto en el botón */
+}
+
+.btn:hover {
+    background-color: #dbe1e8; /* Color de fondo al pasar el mouse */
+    color: #606060; /* Color del texto al pasar el mouse */
+}
+
+.start-now {
+    position: absolute; /* Posiciona el botón de forma absoluta */
+    bottom: 50px; /* Espacio desde el borde inferior */
+    left: 100px; /* Espacio desde el borde izquierdo */
+    background-color: transparent; /* Fondo transparente */
+    color: #ffffff; /* Color del texto del botón */
+    border: 2px solid #ffffff; /* Borde del botón con el mismo color que el texto */
+    padding: 10px 20px; /* Aumentar el espaciado interno para un botón más grande */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    border-radius: 25px; /* Bordes redondeados del botón */
+    text-align: center; /* Centra el texto en el botón */
+    font-size: 16px; /* Aumentar el tamaño de la fuente */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Efecto de transición */
+    width: auto; /* Puedes cambiar esto a un valor fijo o 100% si deseas que ocupe todo el ancho */
+    min-width: 150px; /* Ancho mínimo para asegurarte de que el botón sea lo suficientemente grande */
+}
+
+/* Cambios al pasar el mouse */
+.start-now:hover {
+    background-color: rgba(20, 110, 56, 0.1); /* Color de fondo al pasar el mouse (transparente) */
+    color: #146e38; /* Color del texto al pasar el mouse */
+}
+
+.text-center {
+    color: #146e38; /* Color verde específico */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+}
+
+/* Estilos para la modal */
+.modal {
+    display: none; /* Oculta la modal por defecto */
+    position: fixed; /* Posicionamiento fijo */
+    z-index: 1; /* Asegura que se superponga */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: hidden; /* Evita el scroll dentro del modal */
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo negro con transparencia */
+    display: flex; /* Usar flexbox para centrar contenido */
+    justify-content: center; /* Alinear horizontalmente */
+    align-items: center; /* Alinear verticalmente */
+}
+
+.modal-content {
+    background-color: #fefefebe;
+    margin: 10% auto; /* Mantener el margen vertical */
+    margin-left: 900px; /* Ajustar este valor para mover la modal a la derecha */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 400px; /* Ancho del contenido */
+    border-radius: 10px; /* Esquinas redondeadas */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.close {
+    color: #aaa; /* Color del botón de cerrar */
+    float: right; /* Posiciona el botón a la derecha */
+    font-size: 28px; /* Tamaño del botón de cerrar */
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Color al pasar el mouse */
+    text-decoration: none; /* Sin subrayado */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+}
+.form-wrapper h1 {
+    font-size: 2em; /* Tamaño de fuente grande */
+    font-weight: bold; /* Negrita */
+    color: #4A9B1C; /* Color verde oscuro */
+    text-align: center; /* Centrado */
+    margin-bottom: 20px; /* Margen inferior */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    border-bottom: 2px solid #4A9B1C; /* Línea inferior verde */
+    padding-bottom: 10px; /* Espaciado inferior */
+}
+.form-wrapper {
+    background-color: rgba(169, 152, 152, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px; /* Ancho máximo ajustado para dos columnas */
+    margin: auto; /* Centrar horizontalmente */
+    display: flex; /* Usar flexbox para disposición horizontal */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 15px; /* Espacio entre los elementos */
+}
+
+.form-wrapper2 {
+    background-color: rgba(158, 152, 169, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 800px; /* Ancho máximo ajustado para dos columnas */
+    margin: auto; /* Centrar horizontalmente */
+    display: flex; /* Usar flexbox para disposición horizontal */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 15px; /* Espacio entre los elementos */
+    justify-content: center; /* Centrar elementos horizontalmente */
+    align-items: center; /* Centrar elementos verticalmente */
+}
+
+.form-row {
+    display: flex; /* Usar flexbox para disposición horizontal */
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    gap: 15px; /* Espacio entre las columnas */
+}
+
+.form-column {
+    flex: 1; /* Hacer que las columnas ocupen el mismo espacio */
+    min-width: 300px; /* Ancho mínimo para cada columna */
+}
+
+/* Opcional: Ajustes para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    }
+}
+.welcome-message {
+    font-family: 'Arial', sans-serif; /* Reemplaza con la fuente correcta usada en el navbar */
+    font-size: 20px;
+    color: white;
+    font-weight: bold; /* Hace el texto en negrita */
+    margin: -20px 0 0 300px; /* Ajusta el margen superior (negativo para mover hacia arriba) y izquierdo */
+}
+
+.options-navbar {
+    background-color: #17492a; /* Color de fondo de la barra */
+    padding: 20px; /* Espaciado interior */
+    width: 200px; /* Ancho fijo para la barra de navegación */
+    border-radius: 8px; /* Bordes redondeados */
+    position: fixed; /* Fijar la barra de navegación en el lado izquierdo */
+    left: 20px; /* Espaciado desde la izquierda */
+    top: 100px; /* Espaciado desde la parte superior */
+    height: calc(100% - 120px); /* Ajustar la altura restante de la ventana */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para el efecto 3D */
+}
+
+.options-navbar ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    padding: 0; /* Sin padding */
+    margin: 0; /* Sin margen */
+}
+
+.options-navbar li {
+    margin: 15px 0; /* Espaciado vertical entre los enlaces */
+}
+
+.options-navbar a {
+    text-decoration: none; /* Sin subrayado */
+    color: #fff; /* Color del texto */
+    font-weight: bold; /* Hacer los enlaces en negrita */
+    display: block; /* Hacer que el enlace ocupe todo el ancho */
+    padding: 10px; /* Espaciado interno de los enlaces */
+    transition: background-color 0.3s; /* Efecto de transición para el color de fondo */
+}
+
+.options-navbar a:hover {
+    background-color: #686868; /* Cambiar el color de fondo al pasar el ratón */
+}
+.options-navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options-navbar .dropdown {
+    position: relative;
+}
+
+.options-navbar .submenu {
+    display: none; /* Ocultar por defecto */
+    position: absolute;
+    top: 100%; /* Mostrar debajo del botón */
+    left: 0;
+    background-color:  #102b1a;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}
+
+.options-navbar .submenu.show {
+    display: block; /* Mostrar al activar la clase 'show' */
+}
+
+.options-navbar a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px;
+    display: block;
+}
+
+.options-navbar a:hover {
+    background-color: #ddd;
+    color: #17492a;
+}
+#content-container { 
+    max-width: 1200px; /* Ajustar el ancho máximo del contenedor para permitir más espacio */
+    margin: 100px auto; /* Centrando el contenedor en la parte superior, puedes cambiarlo a 100px 0 para centrarlo verticalmente */
+    padding: 0; /* Espaciado interno */
+    background-color: transparent; /* Fondo transparente */
+    /* border: 1px solid #ccc; */ /* Borde eliminado */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    overflow-x: auto; /* Permitir desplazamiento horizontal si es necesario */
+    position: relative; /* Hacer que el contenedor tenga un contexto de posicionamiento */
+    left: 87%; /* Mover el contenedor totalmente a la derecha */
+    transform: translateX(-100%); /* Ajustar el contenedor a la izquierda para que se alinee completamente al lado derecho */
+    
+}
+
+.table {
+    width: 100%; /* Asegúrate de que la tabla ocupe todo el ancho del contenedor */
+    margin: 0; /* Elimina márgenes adicionales */
+    border-collapse: collapse; /* Colapsar bordes */
+    background-color: #ffffff; /* Fondo blanco */
+    table-layout: auto; /* Permitir que el navegador ajuste el ancho de las columnas */
+}
+
+.table th, .table td {
+    padding: 10px 15px; /* Aumentando el espaciado interno para mejorar la legibilidad */
+    text-align: left; /* Alinear texto a la izquierda */
+    border: 1px solid #dddddd; /* Borde ligero */
+    font-size: 14px; /* Aumentando el tamaño de fuente */
+}
+
+
+
+
+.table th {
+    background-color: #0b4e32; /* Color del encabezado */
+    color: white; /* Color del texto del encabezado */
+    font-weight: bold; /* Negrita para el encabezado */
+}
+
+
+
+.table tr:hover {
+    background-color: #f1f1f18f; /* Color de fila al pasar el ratón */
+}
+.action-btn {
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 8px 12px; /* Espaciado interno */
+    cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+    transition: background-color 0.3s, transform 0.3s; /* Transiciones suaves */
+    font-size: 14px; /* Tamaño de fuente */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Asegurar que el botón respete el ancho y alto */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+    margin-right: 10px; /* Espaciado entre botones */
+    vertical-align: middle; /* Alinear verticalmente los botones */
+}
+
+/* Eliminar el margen derecho del último botón */
+.action-btn:last-child {
+    margin-right: 0; /* Sin margen derecho en el último botón */
+}
+
+/* Botón de editar */
+.edit-btn {
+    background-color: #FFC107; /* Color de fondo amarillo */
+}
+
+.edit-btn:hover {
+    background-color: #e0a800; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Botón de eliminar */
+.delete-btn {
+    background-color: #DC3545; /* Color de fondo rojo */
+}
+
+.delete-btn:hover {
+    background-color: #c82333; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(169, 152, 152, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #204f3c;
+}
+
+.form-row {
+    display: flex; /* Usar flexbox para las filas */
+    justify-content: space-between; /* Espacio entre columnas */
+    margin-bottom: 15px; /* Espacio entre las filas */
+}
+
+.form-group {
+    flex: 1; /* Cada grupo toma el mismo espacio */
+    margin-right: 10px; /* Espacio a la derecha */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Sin margen derecho en el último grupo */
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #090909;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+
+.form-group input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #1b4a2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #878b97;
+}
+
+.form-group span {
+    font-size: 14px;
+    color: #555;
+}
+.form-row {
+    display: flex; /* Usar flexbox para las filas */
+    justify-content: space-between; /* Espacio entre columnas */
+    margin-bottom: 15px; /* Espacio entre las filas */
+}
+
+.form-group {
+    flex: 1; /* Cada grupo toma el mismo espacio */
+    margin-right: 10px; /* Espacio a la derecha */
+}
+
+.form-group:last-child {
+    margin-right: 0; /* Sin margen derecho en el último grupo */
+}
+
+
+.registro-exitoso {
+    background-color: #d4edda; /* Color de fondo verde claro */
+    color: #155724; /* Color de texto verde oscuro */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #c3e6cb; /* Borde verde claro */
+    border-radius: 5px; /* Bordes redondeados */
+    margin: 20px 0; /* Margen superior e inferior */
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Contenedor principal */
+.dashboard-main-container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Título del dashboard */
+.dashboard-title {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color:  #155724;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: bold;
+}
+
+/* Contenedor de estadísticas */
+.dashboard-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Tarjetas de estadísticas */
+.stat-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 1 1 200px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.2s;
+    color: #333;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+/* Título y valor de estadísticas */
+.stat-title {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #333;
+}
