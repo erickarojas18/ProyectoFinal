@@ -1,4 +1,10 @@
 <?php
+$db = \Config\Database::connect();
+if ($db->connID) {
+    echo "Conexión exitosa a la base de datos.";
+} else {
+    echo "Error al conectar a la base de datos.";
+}
 
 namespace App\Controllers;
 
@@ -16,54 +22,52 @@ class Usuarios extends BaseController
             'error_msg' => $error_msg
         ];
 
-        return view('pagina_principal', $data);
+        return view('registrar', $data);
     }
     public function registrar()
     {
-        // Si es un POST, manejar la lógica de registro
         if ($this->request->getMethod() === 'post') {
-            $validation = \Config\Services::validation();
-
-            // Validar los datos del formulario
-            $validation->setRules([
-                'nombre' => 'required|min_length[3]',
-                'apellidos' => 'required|min_length[3]',
-                'telefono' => 'required|numeric|min_length[10]|max_length[15]',
-                'email' => 'required|valid_email',
-                'direccion' => 'required',
-                'pais' => 'required',
-                'password' => 'required|min_length[8]',
-            ]);
-
-            if (!$validation->withRequest($this->request)->run()) {
-                // En caso de errores, recargar la vista con los errores
-                return view('usuarios/registrar', ['validation' => $validation]);
-            }
-
-            // Guardar los datos
-            $model = new UsuarioModel();
-            $model->save([
+            // Capturar datos del formulario
+            $data = [
                 'nombre' => $this->request->getPost('nombre'),
                 'apellidos' => $this->request->getPost('apellidos'),
                 'telefono' => $this->request->getPost('telefono'),
                 'email' => $this->request->getPost('email'),
                 'direccion' => $this->request->getPost('direccion'),
                 'pais' => $this->request->getPost('pais'),
-                'password' => password_hash($this->request->getPost('password'), PASSWORD_BCRYPT),
-            ]);
+                'contraseña' => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT),
+                'ultimo_inicio_sesion' => date('Y-m-d H:i:s')
+            ];
 
-            return redirect()->to(base_url('usuarios/success'));
+            // Instancia del modelo
+            $usuarioModel = new UsuarioModel();
+
+            // Obtener rol_id y estado_id
+            $data['rol_id'] = $usuarioModel->obtenerRolId('amigo');
+            $data['estado_id'] = $usuarioModel->obtenerEstadoId('activo');
+
+            // Insertar datos
+            if ($usuarioModel->insert($data)) {
+                // Registro exitoso
+                session()->setFlashdata('success', '¡Registro exitoso! Ahora puedes iniciar sesión.');
+                return redirect()->to(base_url('login'));
+            } else {
+                // Error en el registro
+                session()->setFlashdata('error', 'Hubo un problema al registrar el usuario.');
+                return redirect()->to(base_url('usuarios/registro'));
+            }
         }
-
-        // En GET, mostrar el formulario
-        return view('usuarios/registrar');
+        echo "Cargando el formulario de registro";
+        // Mostrar el formulario
+        helper('form'); // Cargar el helper
+        return view('usuarios/registro');
     }
         
-    public function listarUsuarios()
+    public function prueba()
     {
-        $usuarioModel = new UsuarioModel();
-        $data['usuarios'] = $usuarioModel->findAll();
-        return view('usuarios/listar', $data);
+        return view('usuarios/prueba'); // Carga app/Views/usuarios/prueba.php
     }
+
+    
     
 }

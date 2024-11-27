@@ -11,9 +11,9 @@ $routes->get('login', 'Login::index'); // Ruta para cargar el formulario de logi
 $routes->post('Login/autenticar', 'Login::autenticar'); // Ruta para procesar el login
 $routes->get('logout', 'Login::logout'); // Ruta para cerrar sesión
 
-$routes->get('/usuarios/registrar', 'Usuarios::registrar');
-$routes->post('/usuarios/registrar', 'Usuarios::registrar');
+$routes->get('usuarios/prueba', 'Usuarios::prueba');
 
-$routes->get('usuarios/listar', 'Usuarios::listarUsuarios'); // Listar usuarios
-$routes->get('login', 'Login::index'); // Página de login (si tienes un controlador separado para Login)
+$routes->get('usuarios/registrar', 'Usuario::registrar'); // Mostrar el formulario
+$routes->post('Usuarios/registrar', 'Usuario::registrar'); // Procesar los datos del formulario
+
 
