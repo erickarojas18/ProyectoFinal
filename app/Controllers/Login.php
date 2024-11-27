@@ -14,7 +14,7 @@ class Login extends BaseController
         $error_msg = session()->getFlashdata('error_msg');
 
         // Mostrar la vista de inicio de sesión
-        return view('login/index', ['error_msg' => $error_msg]);
+        return view('pagina_principal', ['error_msg' => $error_msg]);
     }
 
     public function autenticar()

@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="<?= base_url('style.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
-<body class="login-background">
-    <div class="login-container">
-        <button type="button" class="start-now" onclick="openModal()">Start Now</button>
-    </div>
 
+<body class="login-background">
+        <button type="button" class="start-now" onclick="openModal()">Start Now</button>
+    
     <!-- Modal -->
     <div id="loginModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <div class="login-container">
-                <form class="login-form" action="<?= base_url('login/autenticar') ?>" method="POST">
+                <form class="login-form" action="<?= base_url('Login/autenticar') ?>" method="POST">
                     <h1 class="text-center">Login</h1>
 
                     <?php if (!empty($error_msg)): ?>
@@ -35,7 +34,7 @@
                         <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    <button type="submit" class="btn">Login</button>
                 </form>
             </div>
         </div>

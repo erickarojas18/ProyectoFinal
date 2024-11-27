@@ -6,17 +6,27 @@ h1 {
     margin: 20px 0; /* Añade espacio arriba y abajo del título */
 }
 
-.signup-background2 { 
-    background-image: url('../images/back.jpg');
+.login-background { 
+    background-image: url('/back.jpg');
 }
 
 /* Fondo para el formulario de inicio de sesión */
 .login-background { 
-    background-image: url('../images/background.jpg');
+    background-image: url('/background.jpg');
 }
 .users-background { 
-    background-image: url('../images/fond.jpg');
+    background-image: url('fond.jpg');
 }
+
+.login-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 400px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 
 /* Estilos comunes */
 body { 
