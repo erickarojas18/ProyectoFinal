@@ -6,10 +6,21 @@
     <title>Login</title>
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
-
 <body class="login-background">
+    <!-- Menú de navegación -->
+    <ul class="nav" id="navId">
+        <li class="nav-item">
+            <a href="<?= base_url('usuarios/registrar') ?>" class="nav-link">Signup</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?= base_url('login') ?>" class="nav-link">Login</a>
+        </li>
+        <li class="nav-item">
+            <a href="<?= base_url('logout') ?>" class="nav-link">Logout</a>
+        </li>
+    </ul>
         <button type="button" class="start-now" onclick="openModal()">Start Now</button>
-    
+
     <!-- Modal -->
     <div id="loginModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -40,6 +51,7 @@
         </div>
     </div>
 
+    <!-- Scripts -->
     <script>
         function openModal() {
             const modal = document.getElementById("loginModal");
