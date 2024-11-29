@@ -1,10 +1,4 @@
 <?php
-$db = \Config\Database::connect();
-if ($db->connID) {
-    echo "Conexión exitosa a la base de datos.";
-} else {
-    echo "Error al conectar a la base de datos.";
-}
 
 namespace App\Controllers;
 
@@ -22,7 +16,7 @@ class Usuarios extends BaseController
             'error_msg' => $error_msg
         ];
 
-        return view('registrar', $data);
+        return view('usuarios/registrar', $data);
     }
     public function registrar()
     {
@@ -36,16 +30,14 @@ class Usuarios extends BaseController
                 'direccion' => $this->request->getPost('direccion'),
                 'pais' => $this->request->getPost('pais'),
                 'contraseña' => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT),
-                'ultimo_inicio_sesion' => date('Y-m-d H:i:s')
+                'ultimo_inicio_sesion' => date('Y-m-d H:i:s'),
+                'rol_id' => 2, // Asignar por defecto el rol de "amigo"
+                'estado_id' => 1 // Asignar por defecto el estado "activo"
             ];
-
+    
             // Instancia del modelo
             $usuarioModel = new UsuarioModel();
-
-            // Obtener rol_id y estado_id
-            $data['rol_id'] = $usuarioModel->obtenerRolId('amigo');
-            $data['estado_id'] = $usuarioModel->obtenerEstadoId('activo');
-
+    
             // Insertar datos
             if ($usuarioModel->insert($data)) {
                 // Registro exitoso
@@ -53,21 +45,15 @@ class Usuarios extends BaseController
                 return redirect()->to(base_url('login'));
             } else {
                 // Error en el registro
-                session()->setFlashdata('error', 'Hubo un problema al registrar el usuario.');
-                return redirect()->to(base_url('usuarios/registro'));
+                $errors = $usuarioModel->errors(); // Captura posibles errores
+                session()->setFlashdata('error', 'Hubo un problema al registrar el usuario. ' . implode(', ', $errors));
+                return redirect()->to(base_url('usuarios/registrar'));
             }
         }
-        echo "Cargando el formulario de registro";
-        // Mostrar el formulario
-        helper('form'); // Cargar el helper
-        return view('usuarios/registro');
+    
+        // Si no es POST, mostrar el formulario
+        return view('usuarios/registrar');
     }
-        
-    public function prueba()
-    {
-        return view('usuarios/prueba'); // Carga app/Views/usuarios/prueba.php
-    }
-
     
     
 }

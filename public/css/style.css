@@ -6,7 +6,7 @@ h1 {
     margin: 20px 0; /* Añade espacio arriba y abajo del título */
 }
 
-.login-background { 
+.login-back { 
     background-image: url('/back.jpg');
 }
 

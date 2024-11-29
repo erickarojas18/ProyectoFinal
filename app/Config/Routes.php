@@ -11,9 +11,11 @@ $routes->get('login', 'Login::index'); // Ruta para cargar el formulario de logi
 $routes->post('Login/autenticar', 'Login::autenticar'); // Ruta para procesar el login
 $routes->get('logout', 'Login::logout'); // Ruta para cerrar sesión
 
-$routes->get('usuarios/prueba', 'Usuarios::prueba');
 
-$routes->get('usuarios/registrar', 'Usuario::registrar'); // Mostrar el formulario
-$routes->post('Usuarios/registrar', 'Usuario::registrar'); // Procesar los datos del formulario
+$routes->get('/registrar', 'Usuarios::index'); // Mostrar el formulario
+$routes->post('Usuarios/registrar', 'Usuarios::registrar'); // Procesar los datos del formulario
+
+$routes->get('admin', 'Admin::index');
+$routes->post('Admin/dashboard', 'Admin::dashboard'); // Procesar los datos del formulario
 
 

@@ -19,21 +19,6 @@ class UsuarioModel extends Model
 
 
 
-        public function obtenerRolId($tipo)
-        {
-            $db = \Config\Database::connect();
-            $query = $db->table('roles')->select('id')->where('tipo', $tipo)->get();
-            $result = $query->getRow();
-            return $result ? $result->id : null;
-        }
-    
-        public function obtenerEstadoId($estado)
-        {
-            $db = \Config\Database::connect();
-            $query = $db->table('estado')->select('id')->where('estado', $estado)->get();
-            $result = $query->getRow();
-            return $result ? $result->id : null;
-        }
 
 
     protected bool $allowEmptyInserts = false;

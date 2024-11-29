@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario</title>
-    <link rel="stylesheet" href="<?php echo base_url('/css/styles.css'); ?>"> 
+    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
 </head>
-<body class="login-background">
-    <div class="signup-container">
+<body class="login-back ">
+    <div class="login-container">
         <div class="form-wrapper">
             <h1 class="text-center">Registro de Usuario</h1>
             <form class="signup-form" action="<?php echo site_url('Usuarios/registrar'); ?>" method="POST" novalidate>
