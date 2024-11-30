@@ -10,7 +10,10 @@ class Usuarios extends BaseController
 {
     public function index(): string
     {
-        $error_msg = session()->getFlashdata('error') ?? '';
+        $usuarioModel = new UsuarioModel();
+        $errorConexion = $usuarioModel->testConnection();
+    
+        $error_msg = $errorConexion ?: session()->getFlashdata('error') ?? '';
         $data = [
             'title' => 'Registro de Usuario - Sign Up',
             'error_msg' => $error_msg

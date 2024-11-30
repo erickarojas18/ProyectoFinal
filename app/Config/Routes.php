@@ -18,4 +18,5 @@ $routes->post('Usuarios/registrar', 'Usuarios::registrar'); // Procesar los dato
 $routes->get('admin', 'Admin::index');
 $routes->post('Admin/dashboard', 'Admin::dashboard'); // Procesar los datos del formulario
 
+$routes->get('amigos', 'Amigos::index');
 

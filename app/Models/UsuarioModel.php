@@ -17,7 +17,21 @@ class UsuarioModel extends Model
         'pais', 'contraseña', 'rol_id', 'estado_id',
         'ultimo_inicio_sesion'];
 
+        public function testConnection()
+    {
+        try {
+            // Inicializar conexión a la base de datos
+            $this->db->initialize();
 
+            // Verificar si la conexión es válida
+            if (!$this->db->connID) {
+                return 'Error en la conexión: ' . $this->db->error();
+            }
+            return null; // Conexión exitosa
+        } catch (\Throwable $e) {
+            return 'Excepción en la conexión: ' . $e->getMessage();
+        }
+    }
 
 
 
