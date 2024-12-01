@@ -1,3 +1,10 @@
+<?php if (!empty($error_msg)): ?>
+    <div class="alert alert-danger">
+        <?= esc($error_msg) ?>
+    </div>
+<?php endif; ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

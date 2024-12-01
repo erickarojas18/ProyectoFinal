@@ -17,39 +17,45 @@ class Login extends BaseController
         return view('pagina_principal', ['error_msg' => $error_msg]);
     }
 
-    public function autenticar()
-    {
-        if ($this->request->getMethod() == 'post') {
-            $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password');
+ public function autenticar()
+{
+    log_message('debug', 'Entrando al método autenticar.');
 
-            $usuarioModel = new UsuarioModel();
-            $usuario = $usuarioModel->getUsuarioByEmail($email);
+    if ($this->request->getMethod() == 'post') {
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
 
-            if ($usuario && password_verify($password, $usuario['contraseña'])) {
-                // Configurar datos de sesión
-                session()->set([
-                    'user_id' => $usuario['id'],
-                    'user_name' => $usuario['nombre'],
-                    'rol_id' => $usuario['rol_id'],
-                    'is_logged_in' => true
-                ]);
+        log_message('debug', "Email recibido: $email");
+        
+        $usuarioModel = new UsuarioModel();
+        $usuario = $usuarioModel->getUsuarioByEmail($email);
 
-                // Redirigir según el rol
-                if ($usuario['rol_id'] == 1) {
-                    return redirect()->to(base_url('admin'));
-                } elseif ($usuario['rol_id'] == 2) {
-                    return redirect()->to(base_url('amigo'));
-                }
-            } else {
-                // Establecer mensaje de error y redirigir
-                session()->setFlashdata('error_msg', 'Credenciales incorrectas.');
-                return redirect()->to(base_url('login'));
+        log_message('debug', 'Usuario obtenido: ' . print_r($usuario, true));
+
+        if ($usuario && password_verify($password, $usuario['contraseña'])) {
+            session()->set([
+                'user_id' => $usuario['id'],
+                'user_name' => $usuario['nombre'],
+                'rol_id' => $usuario['rol_id'],
+                'is_logged_in' => true
+            ]);
+
+            if ($usuario['rol_id'] == 1) {
+                return redirect()->to(base_url('amigos'));
+            } elseif ($usuario['rol_id'] == 2) {
+                return redirect()->to(base_url('amigo'));
             }
+        } else {
+            session()->setFlashdata('error_msg', 'Credenciales incorrectas.');
+            log_message('debug', 'Credenciales incorrectas.');
+            return redirect()->to(base_url('login'));
         }
-
-        return redirect()->to(base_url('login'));
     }
+
+    log_message('debug', 'Método no es POST, redirigiendo a login.');
+    return redirect()->to(base_url('login'));
+}
+
 
     public function logout()
     {
