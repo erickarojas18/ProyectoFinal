@@ -13,7 +13,7 @@
     <li class="nav-item dropdown">
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Especies</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="<?= base_url('especies/administrar') ?>">Administrar Especie</a>
+        <a class="dropdown-item" href="<?= base_url('especies') ?>">Administrar Especie</a>
         <a class="dropdown-item" href="<?= base_url('especies/registrar') ?>">Nueva Especie</a>
       </div>
     </li>

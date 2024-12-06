@@ -22,3 +22,12 @@ $routes->post('Amigos/actualizar/(:num)', 'Amigos::actualizar/$1'); // Actualiza
 $routes->get('Amigos/eliminar/(:num)', 'Amigos::eliminar/$1'); // Elimina un amigo
 
 $routes->get('menu', 'Menu::index');
+
+//especies
+$routes->get('especies', 'Especies::index'); // Muestra la lista de especies
+$routes->get('admin/editar_especie/(:num)', 'Especies::edit/$1'); // Muestra el formulario de edición
+
+$routes->post('Especies/update/(:num)', 'Especies::update/$1'); // Acción para actualizar una especie
+$routes->get('Especies/delete/(:num)', 'Especies::delete/$1');
+
+$routes->get('/compras', 'Compras::index'); // Muestra la lista de arboles comprados

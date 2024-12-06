@@ -14,7 +14,7 @@
     <li class="nav-item dropdown">
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Especies</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="<?= base_url('especies/administrar') ?>">Administrar Especie</a>
+        <a class="dropdown-item" href="<?= base_url('especies') ?>">Administrar Especie</a>
         <a class="dropdown-item" href="<?= base_url('especies/registrar') ?>">Nueva Especie</a>
       </div>
     </li>
@@ -23,7 +23,7 @@
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Amigos</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<?= base_url('admin/lista') ?>">Ver Árboles por Amigos</a>
-        <a class="dropdown-item" href="<?= base_url('amigos/administrar') ?>">Administrar Árboles de Amigos</a>
+        <a class="dropdown-item" href="<?= base_url('am/administrar') ?>">Administrar Árboles de Amigos</a>
         <a class="dropdown-item" href="<?= base_url('amigos') ?>">Administrar Amigos</a>
       </div>
     </li>

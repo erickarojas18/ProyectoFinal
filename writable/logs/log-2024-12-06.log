@@ -1,0 +1,48 @@
+CRITICAL - 2024-12-06 04:24:34 --> ErrorException: Undefined variable $title
+[Method: GET, Route: compras]
+in APPPATH\Views\admin\compra_amigo.php on line 9.
+ 1 APPPATH\Views\admin\compra_amigo.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\compra_amigo.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\compra_amigo.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/compra_amigo', [], true)
+ 5 APPPATH\Controllers\Compras.php(23): view('admin/compra_amigo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Compras->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compras))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-06 04:29:51 --> ErrorException: Undefined variable $title
+[Method: GET, Route: compras]
+in APPPATH\Views\admin\compra_amigo.php on line 9.
+ 1 APPPATH\Views\admin\compra_amigo.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $title', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\compra_amigo.php', 9)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\compra_amigo.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/compra_amigo', [], true)
+ 5 APPPATH\Controllers\Compras.php(23): view('admin/compra_amigo', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Compras->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compras))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-06 04:32:06 --> BadMethodCallException: Call to undefined method App\Models\ArbolesModel::getTreesBoughtByFriends
+[Method: GET, Route: compras]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Compras.php(16): CodeIgniter\Model->__call('getTreesBoughtByFriends', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Compras->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compras))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-06 04:33:43 --> BadMethodCallException: Call to undefined method App\Models\ArbolesModel::getBoughtTree
+[Method: GET, Route: compras]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Compras.php(16): CodeIgniter\Model->__call('getBoughtTree', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Compras->index()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Compras))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
