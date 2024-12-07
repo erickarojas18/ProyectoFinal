@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ArbolDisponibleModel;
+use App\Models\EspecieModel;
 
 class ArbolesDisponibles extends BaseController
 {
@@ -19,6 +20,40 @@ class ArbolesDisponibles extends BaseController
 
         return view('admin/adm_arboles', $data);
     }
+
+    public function crear()
+    {
+        $especieModel = new EspecieModel();
+        $especies = $especieModel->obtenerOpcionesEspecies();
+    
+        $data = [
+            'title' => 'Registrar Nuevo Árbol',
+            'especies' => $especies
+        ];
+    
+        return view('admin/crear_arbol', $data);
+    }
+    
+
+    public function guardar()
+    {
+        $arbolModel = new ArbolDisponibleModel();
+    
+        // Obtener datos del formulario
+        $data = $this->request->getPost();
+    
+        // Asegurarse de que el estado sea siempre 1
+        $data['estado'] = 1;
+    
+        // Validar los datos antes de guardar
+        if (!$arbolModel->insert($data)) {
+            return redirect()->back()->withInput()->with('errors', $arbolModel->errors());
+        }
+    
+        return redirect()->to('/arbol')->with('success', 'Árbol registrado correctamente.');
+    }
+    
+
 
     public function editar($id)
     {

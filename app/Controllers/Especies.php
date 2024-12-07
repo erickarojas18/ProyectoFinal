@@ -26,6 +26,42 @@ class Especies extends BaseController
         return view('admin/adm_especie', $data);
     }
 
+    public function create()
+    {
+        // Mostrar el formulario de creación
+        return view('admin/crear_especie', [
+            'title' => 'Agregar Nueva Especie',
+            'msg' => $this->request->getGet('msg')
+        ]);
+    }
+
+    public function store()
+    {
+        // Obtener los datos del formulario de creación
+        $input = $this->request->getPost();
+
+        // Validar los datos
+        if (!$this->validate([
+            'nombre_comercial' => 'required|min_length[3]',
+            'nombre_cientifico' => 'required|min_length[3]'
+        ])) {
+            return redirect()->to('/especies/create')->withInput()->with('msg', 'Datos inválidos.');
+        }
+
+        // Preparar los datos para guardar
+        $newData = [
+            'nombre_comercial' => $input['nombre_comercial'],
+            'nombre_cientifico' => $input['nombre_cientifico']
+        ];
+
+        // Insertar los datos en la base de datos
+        if ($this->especieModel->insert($newData)) {
+            return redirect()->to('/especies')->with('msg', 'Especie agregada correctamente.');
+        } else {
+            return redirect()->to('/especies/create')->with('msg', 'Error al agregar la especie.');
+        }
+    }
+
     public function edit($id)
     {
         // Cargar la especie para editar

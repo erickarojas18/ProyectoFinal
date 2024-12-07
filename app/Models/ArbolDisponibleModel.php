@@ -21,6 +21,7 @@ class ArbolDisponibleModel extends Model
                     ->where('arboles_dispo.estado', 1)
                     ->findAll();
     }
+   
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

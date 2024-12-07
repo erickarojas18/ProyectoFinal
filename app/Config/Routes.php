@@ -25,8 +25,9 @@ $routes->get('menu', 'Menu::index');
 
 //especies
 $routes->get('especies', 'Especies::index'); // Muestra la lista de especies
+$routes->post('Especies/store/(:num)', 'Especies::store/$1');
 $routes->get('admin/editar_especie/(:num)', 'Especies::edit/$1'); // Muestra el formulario de edición
-
+$routes->get('admin/crear_especie', 'Especies::create'); // Formulario de creación
 $routes->post('Especies/update/(:num)', 'Especies::update/$1'); // Acción para actualizar una especie
 $routes->get('Especies/delete/(:num)', 'Especies::delete/$1');
 
@@ -36,5 +37,9 @@ $routes->get('/arbol', 'ArbolesDisponibles::index'); // Muestra la lista de arbo
 $routes->get('admin/editar_arbol/(:num)', 'ArbolesDisponibles::editar/$1'); // Muestra el formulario de edición
 $routes->post('ArbolesDisponibles/actualizar/(:num)', 'ArbolesDisponibles::actualizar/$1'); // Acción para actualizar una especie
 $routes->get('ArbolesDisponibles/eliminar/(:num)', 'ArbolesDisponibles::eliminar/$1');
+//crear arbol 
+$routes->get('arbol/crear', 'ArbolesDisponibles::crear');
+$routes->post('arbol/guardar', 'ArbolesDisponibles::guardar');
+
 
 $routes->get('dashboard', 'Dashboard::index');

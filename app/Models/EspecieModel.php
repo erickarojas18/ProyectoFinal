@@ -14,6 +14,11 @@ class EspecieModel extends Model
     protected $protectFields    = true;
     protected $allowedFields    = ['nombre_comercial', 'nombre_cientifico'];
 
+    public function obtenerOpcionesEspecies()
+    {
+        return $this->select('id, nombre_comercial, nombre_cientifico')->findAll();
+    }
+
     
 
 

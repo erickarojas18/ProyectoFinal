@@ -41,7 +41,7 @@ class Login extends BaseController
             ]);
 
             if ($usuario['rol_id'] == 1) {
-                return redirect()->to(base_url('amigos'));
+                return redirect()->to(base_url('admin/dashboard'));
             } elseif ($usuario['rol_id'] == 2) {
                 return redirect()->to(base_url('amigo'));
             }
