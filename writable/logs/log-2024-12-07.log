@@ -1,0 +1,88 @@
+CRITICAL - 2024-12-07 02:24:20 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "-Álamo.jpg"
+[Method: GET, Route: arboles/-%C3%81lamo.jpg]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('arboles/-Álamo.jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('arboles/-Álamo.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 02:24:28 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "Álamo.jpg"
+[Method: GET, Route: arboles/%C3%81lamo.jpg]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('arboles/Álamo.jpg')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('arboles/Álamo.jpg')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 02:50:30 --> ErrorException: Undefined variable $especie
+[Method: GET, Route: arbol]
+in APPPATH\Views\admin\adm_arboles.php on line 42.
+ 1 APPPATH\Views\admin\adm_arboles.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $especie', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php', 42)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/adm_arboles', [], true)
+ 5 APPPATH\Controllers\ArbolesDisponibles.php(20): view('admin/adm_arboles', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ArbolesDisponibles->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ArbolesDisponibles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 02:50:33 --> ErrorException: Undefined variable $especie
+[Method: GET, Route: arbol]
+in APPPATH\Views\admin\adm_arboles.php on line 42.
+ 1 APPPATH\Views\admin\adm_arboles.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $especie', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php', 42)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/adm_arboles', [], true)
+ 5 APPPATH\Controllers\ArbolesDisponibles.php(20): view('admin/adm_arboles', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ArbolesDisponibles->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ArbolesDisponibles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 02:50:36 --> ErrorException: Undefined variable $especie
+[Method: GET, Route: arbol]
+in APPPATH\Views\admin\adm_arboles.php on line 42.
+ 1 APPPATH\Views\admin\adm_arboles.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $especie', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php', 42)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/adm_arboles', [], true)
+ 5 APPPATH\Controllers\ArbolesDisponibles.php(20): view('admin/adm_arboles', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ArbolesDisponibles->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ArbolesDisponibles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 02:50:40 --> ErrorException: Undefined variable $especie
+[Method: GET, Route: arbol]
+in APPPATH\Views\admin\adm_arboles.php on line 42.
+ 1 APPPATH\Views\admin\adm_arboles.php(42): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $especie', 'C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php', 42)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\ProyectoFinal\\app\\Views\\admin\\adm_arboles.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('admin/adm_arboles', [], true)
+ 5 APPPATH\Controllers\ArbolesDisponibles.php(20): view('admin/adm_arboles', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ArbolesDisponibles->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ArbolesDisponibles))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-07 03:24:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "dashboard.php"
+[Method: GET, Route: dashboard]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('dashboard.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('dashboard', [], true)
+ 3 APPPATH\Controllers\Dashboard.php(19): view('dashboard', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Dashboard->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dashboard))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

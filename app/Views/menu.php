@@ -31,7 +31,7 @@
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Árboles</a>
       <div class="dropdown-menu">
         <a class="dropdown-item" href="<?= base_url('arboles/registrar') ?>">Nuevo Árbol</a>
-        <a class="dropdown-item" href="<?= base_url('arboles/administrar') ?>">Administrar Árboles</a>
+        <a class="dropdown-item" href="<?= base_url('arbol') ?>">Administrar Árboles</a>
       </div>
     </li>
     <li class="nav-item">

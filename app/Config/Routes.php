@@ -31,3 +31,10 @@ $routes->post('Especies/update/(:num)', 'Especies::update/$1'); // Acción para 
 $routes->get('Especies/delete/(:num)', 'Especies::delete/$1');
 
 $routes->get('/compras', 'Compras::index'); // Muestra la lista de arboles comprados
+
+$routes->get('/arbol', 'ArbolesDisponibles::index'); // Muestra la lista de arboles comprados
+$routes->get('admin/editar_arbol/(:num)', 'ArbolesDisponibles::editar/$1'); // Muestra el formulario de edición
+$routes->post('ArbolesDisponibles/actualizar/(:num)', 'ArbolesDisponibles::actualizar/$1'); // Acción para actualizar una especie
+$routes->get('ArbolesDisponibles/eliminar/(:num)', 'ArbolesDisponibles::eliminar/$1');
+
+$routes->get('dashboard', 'Dashboard::index');

@@ -23,7 +23,7 @@
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Amigos</a>
             <div class="dropdown-menu">
                 <a class="dropdown-item" href="<?= base_url('admin/lista') ?>">Ver Árboles por Amigos</a>
-                <a class="dropdown-item" href="<?= base_url('amigos/administrar') ?>">Administrar Árboles de Amigos</a>
+                <a class="dropdown-item" href="<?= base_url('compras') ?>">Administrar Árboles de Amigos</a>
                 <a class="dropdown-item" href="<?= base_url('amigos') ?>">Administrar Amigos</a>
             </div>
         </li>
