@@ -33,10 +33,6 @@ class UsuarioModel extends Model
         }
     }
 
-        public function getUsuarioByEmail(string $email)
-    {
-        return $this->where('email', $email)->first();
-    }
 
 
 

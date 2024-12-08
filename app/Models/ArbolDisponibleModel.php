@@ -16,11 +16,12 @@ class ArbolDisponibleModel extends Model
 
     public function cargarArbolesDisponibles()
     {
-        return $this->select('arboles_dispo.id, arboles_dispo.especie, especies.nombre_comercial, especies.nombre_cientifico, arboles_dispo.ubicacion, arboles_dispo.precio, arboles_dispo.imagen, arboles_dispo.tamano')
+        return $this->select('arboles_dispo.id, arboles_dispo.especie, especies.nombre_comercial, especies.nombre_cientifico, arboles_dispo.ubicacion, arboles_dispo.estado, arboles_dispo.precio, arboles_dispo.imagen, arboles_dispo.tamano')
                     ->join('especies', 'arboles_dispo.especie = especies.id')
                     ->where('arboles_dispo.estado', 1)
                     ->findAll();
     }
+    
    
 
     protected bool $allowEmptyInserts = false;

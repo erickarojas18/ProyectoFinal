@@ -28,10 +28,23 @@ class Especies extends BaseController
 
     public function create()
     {
-        // Mostrar el formulario de creación
+        $model = new EspecieModel();
+
+        // Obtener opciones de nombre comercial y científico
+        $opciones = $model->obtenerOpcionesEspecies();
+
+        // Preparar las opciones para los selects
+        $nombresComerciales = array_column($opciones, 'nombre_comercial');
+        $nombresCientificos = array_column($opciones, 'nombre_cientifico');
+
+        $title = 'Registrar Especie';
+
+
+        // Cargar vista y pasar los datos
         return view('admin/crear_especie', [
-            'title' => 'Agregar Nueva Especie',
-            'msg' => $this->request->getGet('msg')
+            'title' => $title,
+            'nombresComerciales' => $nombresComerciales,
+            'nombresCientificos' => $nombresCientificos
         ]);
     }
 

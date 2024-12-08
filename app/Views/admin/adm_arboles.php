@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
     <title><?= esc($title) ?></title>
 </head>
+
 <body class="login-back">
     <div class="container mt-5">
         <h1><?= esc($title) ?></h1>
@@ -39,9 +41,10 @@
                             </td>
                             <td>
                                 <a href="<?= base_url('admin/editar_arbol/' . $arbol['id']) ?>" class="btn btn-warning btn-sm">Editar</a>
-                                <form action="<?= base_url('ArbolesDisponibles/eliminar/' . $arbol['id']) ?>" method="post" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este árbol?');">
+                                <form action="<?= base_url('ArbolesDisponibles/eliminar/' . $arbol['id']) ?>" method="get" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar este árbol?');">
                                     <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
                                 </form>
+
                             </td>
                         </tr>
                     <?php endforeach; ?>
@@ -54,4 +57,5 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

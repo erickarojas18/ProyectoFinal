@@ -2,61 +2,58 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
 use App\Models\UsuarioModel;
-use CodeIgniter\HTTP\ResponseInterface;
 
 class Usuarios extends BaseController
 {
-    public function index(): string
+    public function registro()
     {
-        $usuarioModel = new UsuarioModel();
-        $errorConexion = $usuarioModel->testConnection();
-    
-        $error_msg = $errorConexion ?: session()->getFlashdata('error') ?? '';
-        $data = [
-            'title' => 'Registro de Usuario - Sign Up',
-            'error_msg' => $error_msg
-        ];
-
-        return view('usuarios/registrar', $data);
-    }
-    public function registrar()
-    {
+        // Verifica si es un POST
         if ($this->request->getMethod() === 'post') {
-            // Capturar datos del formulario
-            $data = [
-                'nombre' => $this->request->getPost('nombre'),
-                'apellidos' => $this->request->getPost('apellidos'),
-                'telefono' => $this->request->getPost('telefono'),
-                'email' => $this->request->getPost('email'),
-                'direccion' => $this->request->getPost('direccion'),
-                'pais' => $this->request->getPost('pais'),
-                'contraseña' => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT),
-                'ultimo_inicio_sesion' => date('Y-m-d H:i:s'),
-                'rol_id' => 2, // Asignar por defecto el rol de "amigo"
-                'estado_id' => 1 // Asignar por defecto el estado "activo"
+            log_message('info', 'Formulario recibido');  // Añadir para depuración
+            $model = new UsuarioModel();
+
+            // Reglas de validación
+            $validationRules = [
+                'nombre'      => 'required|min_length[3]|max_length[50]',
+                'apellidos'   => 'required|min_length[3]|max_length[50]',
+                'telefono'    => 'required|numeric|min_length[8]|max_length[15]',
+                'email'       => 'required|valid_email|max_length[100]',
+                'direccion'   => 'required|min_length[5]|max_length[255]',
+                'pais'        => 'required|max_length[50]',
+                'contraseña'  => 'required|min_length[8]',
             ];
-    
-            // Instancia del modelo
-            $usuarioModel = new UsuarioModel();
-    
-            // Insertar datos
-            if ($usuarioModel->insert($data)) {
-                // Registro exitoso
-                session()->setFlashdata('success', '¡Registro exitoso! Ahora puedes iniciar sesión.');
-                return redirect()->to(base_url('login'));
+
+            // Validar datos
+            if (!$this->validate($validationRules)) {
+                return redirect()->back()->withInput()->with('error', 'Por favor corrige los errores del formulario.');
+            }
+
+            // Datos a insertar
+            $data = [
+                'nombre'              => $this->request->getPost('nombre'),
+                'apellidos'           => $this->request->getPost('apellidos'),
+                'telefono'            => $this->request->getPost('telefono'),
+                'email'               => $this->request->getPost('email'),
+                'direccion'           => $this->request->getPost('direccion'),
+                'pais'                => $this->request->getPost('pais'),
+                'contraseña'          => password_hash($this->request->getPost('contraseña'), PASSWORD_DEFAULT),
+                'rol_id'              => 2, // Rol por defecto para "Amigos"
+                'estado_id'           => 1, // Estado activo
+                'ultimo_inicio_sesion' => null,  // Set a NULL
+            ];
+
+            // Insertar en la base de datos
+            $model = new UsuarioModel();
+            if ($model->insert($data)) {
+                return redirect()->to(base_url('login'))->with('success', 'Usuario registrado exitosamente.');
             } else {
-                // Error en el registro
-                $errors = $usuarioModel->errors(); // Captura posibles errores
-                session()->setFlashdata('error', 'Hubo un problema al registrar el usuario. ' . implode(', ', $errors));
-                return redirect()->to(base_url('usuarios/registrar'));
+                log_message('error', 'Error al registrar usuario: ' . json_encode($model->errors()));
+                return redirect()->back()->withInput()->with('error', 'Ocurrió un error al guardar el usuario.');
             }
         }
-    
-        // Si no es POST, mostrar el formulario
+
+        // Renderizar vista
         return view('usuarios/registrar');
     }
-    
-    
 }

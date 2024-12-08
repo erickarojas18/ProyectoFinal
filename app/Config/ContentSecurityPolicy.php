@@ -173,4 +173,7 @@ class ContentSecurityPolicy extends BaseConfig
      * Replace nonce tag automatically
      */
     public bool $autoNonce = true;
+
+    public $csrfProtection = true;
+
 }
