@@ -384,7 +384,10 @@ body {
     padding: 20px;
     background-color: rgba(169, 152, 152, 0.8); /* Fondo semi-transparente */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(101, 96, 96, 0.1);
+    position: absolute; /* Posición absoluta para permitir control de las coordenadas */
+    bottom: 20px; /* Distancia desde la parte inferior del contenedor padre */
+    right: 20px; /* Distancia desde la parte derecha del contenedor padre */
 }
 
 .form-container h2 {
@@ -401,7 +404,7 @@ body {
 
 .form-group {
     flex: 1; /* Cada grupo toma el mismo espacio */
-    margin-right: 10px; /* Espacio a la derecha */
+    margin-right: 500px; /* Espacio a la derecha */
 }
 
 .form-group:last-child {
@@ -538,3 +541,6 @@ body {
     font-weight: bold;
     color: #333;
 }
+
+
+
