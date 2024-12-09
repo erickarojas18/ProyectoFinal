@@ -10,7 +10,7 @@
 <body class="login-background">
     <!-- Login Form -->
     <div class="form-container">
-        <h1>Login</h1>
+        <h2>Login</h2>
 
         <?php if (session()->getFlashdata('error')): ?>
             <div class="alert alert-danger">

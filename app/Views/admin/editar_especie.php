@@ -51,7 +51,7 @@
 
   <div class="container mt-5">
     <div class="login-container">
-      <h1>Editar Especie</h1>
+      <h2>Editar Especie</h2>
 
       <!-- Mostrar mensaje si está presente -->
       <?php if (!empty($msg)): ?>
