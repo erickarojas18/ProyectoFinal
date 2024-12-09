@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Usuario</title>
-    <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
+  <title>Administar Usuarios</title>
 </head>
 <body class="login-back">
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header text-center">
-                        <h3>Registro de Usuario</h3>
+
+  <!-- Menú de Navegación -->
+  <ul class="nav nav-tabs" id="navId">
+
+    
+    <li class="nav-item">
+      <a href="<?= base_url('registrar') ?>" class="nav-link">Signup</a>
+    </li>
+    <li class="nav-item">
+      <a href="<?= base_url('login') ?>" class="nav-link">Login</a>
+    </li>
+    <li class="nav-item">
+      <a href="<?= base_url('logout') ?>" class="nav-link">Logout</a>
+    </li>
+  </ul>
+<body class="login-back">
+<div class="form-wrapper2">
+<div class="container mt-5">
+<h2>Registro de Usuario</h2>
+       
+                      
                     </div>
                     <div class="card-body">
                         <!-- Mensajes de error o éxito -->
@@ -50,18 +65,19 @@
                                         <input type="text" name="direccion" id="direccion" class="form-control" value="<?= old('direccion') ?>" required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="pais" class="form-label">País</label>
-                                        <select name="pais" id="pais" class="form-select" required>
-                                            <option value="">Selecciona un país</option>
-                                            <!-- Opciones dinámicas -->
-                                        </select>
-                                    </div>
+    <label for="pais" class="form-label">País</label>
+    <select name="pais" id="pais" class="form-select custom-select">
+        <option value="">Selecciona un país</option>
+        <!-- Opciones dinámicas generadas por JS -->
+    </select>
+</div>
+
                                     <div class="mb-3">
                                         <label for="contraseña" class="form-label">Contraseña</label>
                                         <input type="password" name="contraseña" id="contraseña" class="form-control" required minlength="8">
                                     </div>
                                     <div class="d-grid">
-                                        <button type="submit" class="btn btn-primary btn-block">Registrarse</button>
+                                        <button type="submit" class="btn-action btn-edit">Registrarse</button>
                                     </div>
                                 </div>
                             </div>
