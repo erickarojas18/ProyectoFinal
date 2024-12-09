@@ -182,13 +182,16 @@ body {
     justify-content: center; /* Centra verticalmente el contenido */
     padding: 20px; /* Espaciado interno generoso */
     margin: 20px auto; /* Margen externo superior/inferior */
-    background-color: rgba(220, 215, 215, 0.8); /* Fondo semi-transparente */
+    background-color: rgba(246, 242, 242, 0.8); /* Fondo semi-transparente */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-    max-width: 700px; /* Ancho máximo ajustado */
-    width: 90%; /* Se adapta a pantallas pequeñas */
+    max-width: 80%; /* Se adapta al 90% del ancho de la pantalla */
+    width: auto; /* No limita el ancho mínimo o máximo directamente */
     box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    min-height: 200px; /* Ajusta la altura mínima según el contenido */
 }
+
+
 
 
 
