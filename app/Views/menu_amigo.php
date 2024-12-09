@@ -11,7 +11,7 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" id="navId">
     <li class="nav-item">
-      <a href="<?= base_url('amigo/mis_arboles') ?>" class="nav-link">Mis Árboles</a>
+      <a href="<?= base_url('usuarios/arboles_comprados') ?>" class="nav-link">Mis Árboles</a>
     </li>
     <li class="nav-item">
       <a href="<?= base_url('arboles_disponibles') ?>" class="nav-link">Árboles Disponibles</a>

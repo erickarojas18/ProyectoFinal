@@ -2,64 +2,51 @@
 
 namespace App\Controllers;
 
-use App\Controllers\BaseController;
-use App\Models\UsuarioModel;
-use CodeIgniter\HTTP\ResponseInterface;
+use App\Models\LoginModel;
+use CodeIgniter\Controller;
 
-class Login extends BaseController
+class Login extends Controller
 {
-    public function index()
+    public function __construct()
     {
-        // Capturar mensaje de error (si existe)
-        $error_msg = session()->getFlashdata('error_msg');
-
-        // Mostrar la vista de inicio de sesión
-        return view('pagina_principal', ['error_msg' => $error_msg]);
+        helper(['form', 'url']);  // Cargar helpers necesarios
     }
 
- public function autenticar()
-{
-    log_message('debug', 'Entrando al método autenticar.');
+    public function index()
+    {
+        return view('pagina_principal');  // Mostrar la vista de login
+    }
 
-    if ($this->request->getMethod() == 'post') {
-        $email = $this->request->getPost('email');
-        $password = $this->request->getPost('password');
+    public function autenticar()
+    {
+        $session = session();  // Acceder al servicio de sesión
 
-        log_message('debug', "Email recibido: $email");
-        
-        $usuarioModel = new UsuarioModel();
-        $usuario = $usuarioModel->getUsuarioByEmail($email);
+        $correo = $this->request->getPost('email');  // Obtener el correo del formulario
+        $contrasena = $this->request->getPost('contrasena');  // Obtener la contraseña
 
-        log_message('debug', 'Usuario obtenido: ' . print_r($usuario, true));
+        $usuarioModel = new LoginModel();  // Cargar el modelo
 
-        if ($usuario && password_verify($password, $usuario['contraseña'])) {
-            session()->set([
-                'user_id' => $usuario['id'],
-                'user_name' => $usuario['nombre'],
-                'rol_id' => $usuario['rol_id'],
-                'is_logged_in' => true
-            ]);
+        // Verificar el usuario y la contraseña
+        $usuario = $usuarioModel->verificar_usuario($correo, $contrasena);
 
-            if ($usuario['rol_id'] == 1) {
-                return redirect()->to(base_url('admin/dashboard'));
-            } elseif ($usuario['rol_id'] == 2) {
-                return redirect()->to(base_url('amigo'));
+        if ($usuario) {
+            $session->set('usuario', $usuario);  // Guardar el usuario en la sesión
+            // Redirigir según el rol
+            if ($usuario->rol_id == 1) {
+                return redirect()->to('dashboard');  // Redirigir al menú si el rol es 1
+            } elseif ($usuario->rol_id == 2) {
+                return redirect()->to('usuarios');  // Redirigir a usuarios si el rol es 2
             }
         } else {
-            session()->setFlashdata('error_msg', 'Credenciales incorrectas.');
-            log_message('debug', 'Credenciales incorrectas.');
-            return redirect()->to(base_url('login'));
+            $session->setFlashdata('error', 'Credenciales incorrectas');
+            return redirect()->to('login');  // Redirigir al login si las credenciales son incorrectas
         }
     }
 
-    log_message('debug', 'Método no es POST, redirigiendo a login.');
-    return redirect()->to(base_url('login'));
-}
-
-
     public function logout()
     {
-        session()->destroy();
-        return redirect()->to(base_url('login'));
+        $session = session();
+        $session->remove('usuario');  // Eliminar usuario de la sesión
+        return redirect()->to('login');  // Redirigir al login
     }
 }

@@ -21,8 +21,8 @@
     <li class="nav-item dropdown">
       <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Amigos</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="<?= base_url('admin/lista') ?>">Ver Árboles por Amigos</a>
-        <a class="dropdown-item" href="<?= base_url('amigos/administrar') ?>">Administrar Árboles de Amigos</a>
+        <a class="dropdown-item" href="<?= base_url('admin/ver_arboles') ?>">Ver Árboles por Amigos</a>
+        <a class="dropdown-item" href="<?= base_url('admin/adm_arbol_amigo') ?>">Administrar Árboles de Amigos</a>
         <a class="dropdown-item" href="<?= base_url('amigos') ?>">Administrar Amigos</a>
       </div>
     </li>
@@ -38,7 +38,7 @@
       <a href="<?= base_url('dashboard') ?>" class="nav-link">Dashboard</a>
     </li>
     <li class="nav-item">
-      <a href="<?= base_url('signup') ?>" class="nav-link">Signup</a>
+      <a href="<?= base_url('registrar') ?>" class="nav-link">Signup</a>
     </li>
     <li class="nav-item">
       <a href="<?= base_url('login') ?>" class="nav-link">Login</a>

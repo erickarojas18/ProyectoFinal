@@ -12,6 +12,7 @@ $routes->post('Login/autenticar', 'Login::autenticar'); // Ruta para procesar el
 $routes->get('logout', 'Login::logout'); // Ruta para cerrar sesión
 
 
+
 $routes->get('/registrar', 'Usuarios::registro'); // Mostrar el formulario
 $routes->post('/registrar', 'Usuarios::registro'); // Procesar los datos del formulario
 
@@ -47,3 +48,13 @@ $routes->get('dashboard', 'Dashboard::index');
 
 $routes->get('arboles_disponibles', 'Arbol::index');
 $routes->get('comprar_arbol/(:num)', 'Arbol::comprar/$1');
+
+$routes->get('usuarios/arboles_comprados', 'Arbol::arbolesComprados');
+
+//ver arboles amigos
+$routes->get('admin/ver_arboles', 'Vista::arbolesCompradosPorAmigos');
+//administrar arboles amigos
+
+$routes->get('admin/adm_arbol_amigo', 'Vista::index');
+$routes->match(['get', 'post'], 'admin/editar_arbol_amigo/(:num)', 'Vista::editarArbol/$1');
+$routes->get('Vista/eliminarArbol/(:num)', 'Vista::eliminarArbol/$1');

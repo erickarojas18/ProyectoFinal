@@ -21,7 +21,11 @@ use CodeIgniter\Config\AutoloadConfig;
  * @immutable
  */
 class Autoload extends AutoloadConfig
+
 {
+
+    public $libraries = ['session', 'database'];  // Aquí se cargan las librerías necesarias
+
     /**
      * -------------------------------------------------------------------
      * Namespaces
@@ -43,6 +47,9 @@ class Autoload extends AutoloadConfig
     
     public $psr4 = [
         APP_NAMESPACE => APPPATH,
+        
+
+        
         
     ];
 

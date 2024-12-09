@@ -22,7 +22,15 @@ class ArbolDisponibleModel extends Model
                     ->findAll();
     }
     
-   
+    public function registrarCompra($data)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('compras');
+        return $builder->insert($data);
+    }
+
+    
+
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
