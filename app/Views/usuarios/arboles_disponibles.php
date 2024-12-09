@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-  <title>Menú de Navegación - Amigos</title>
+  <title>Árboles Disponibles</title>
 </head>
 <body class="login-back">
   <!-- Nav tabs -->
@@ -26,8 +26,10 @@
       <a href="<?= base_url('logout') ?>" class="nav-link">Logout</a>
     </li>
   </ul>
-<body class="login-back">
-<div class="container mt-5">
+
+<div class="form-wrapper">
+    <div class="container mt-5">
+        <h2>Árboles Disponibles</h2>
 
     <!-- Mostrar mensaje si está presente -->
     <?php if (session()->getFlashdata('msg')): ?>
@@ -64,7 +66,7 @@
                         <img src="<?= base_url('arboles/' . $arbol['imagen']) ?>" alt="Imagen de <?= htmlspecialchars($arbol['nombre_comercial']) ?>" style="width: 100px; height: auto;">
                     </td>
                     <td style="white-space: nowrap;">
-                        <a href="<?= base_url('comprar_arbol/' . $arbol['id']) ?>" class="btn btn-success">Comprar</a>
+                        <a href="<?= base_url('comprar_arbol/' . $arbol['id']) ?>" class="btn-action btn-edit">Comprar</a>
                     </td>
                 </tr>
             <?php endforeach; ?>

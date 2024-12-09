@@ -1022,3 +1022,93 @@ WHERE `arboles_dispo`.`estado` = :arboles_dispo.estado:', [...], false)
 12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
 13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:41:05 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:41:53 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:42:41 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:46:17 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:48:09 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:48:59 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:53:11 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:53:18 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-12-09 20:53:22 --> ErrorException: Attempt to read property "id" on null
+[Method: GET, Route: usuarios/arboles_comprados]
+in APPPATH\Controllers\Arbol.php on line 52.
+ 1 APPPATH\Controllers\Arbol.php(52): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on null', 'C:\\xampp\\ProyectoFinal\\app\\Controllers\\Arbol.php', 52)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Arbol->arbolesComprados()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Arbol))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
