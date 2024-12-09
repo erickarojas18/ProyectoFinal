@@ -52,21 +52,21 @@
         <div class="dashboard-container">
     <!-- Mostrar la cantidad de amigos registrados -->
     <div class="stat-card">
-        <img src="/public/cantidad de amigos.jpg" alt="Imagen de amigos registrados" class="stat-image">
+       
         <p class="stat-title">Amigos Registrados</p>
         <p class="stat-value"><?= is_numeric($cantidad_amigos) ? $cantidad_amigos : 'Error' ?></p>
     </div>
     
     <!-- Mostrar la cantidad de árboles disponibles -->
     <div class="stat-card">
-        <img src="/public/arb-diponibles.jpg" alt="Imagen de árboles disponibles" class="stat-image">
+      
         <p class="stat-title">Árboles Disponibles</p>
         <p class="stat-value"><?= is_numeric($cantidad_arboles_disponibles) ? $cantidad_arboles_disponibles : 'Error' ?></p>
     </div>
 
     <!-- Mostrar la cantidad de árboles vendidos -->
     <div class="stat-card">
-        <img src="/public/arb-vendidos.jpg" alt="Imagen de árboles vendidos" class="stat-image">
+      
         <p class="stat-title">Árboles Vendidos</p>
         <p class="stat-value"><?= is_numeric($cantidad_arboles_vendidos) ? $cantidad_arboles_vendidos : 'Error' ?></p>
     </div>

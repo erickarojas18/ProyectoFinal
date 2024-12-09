@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-    <title>Formulario con Menú de Navegación</title>
+    <title>Administrar Arboles Amigo</title>
 </head>
 
 <body class="login-back">
@@ -50,8 +50,8 @@
     </ul>
 
     <body class="login-back">
-        <div class="form-wrapper">
-            <div class="container mt-5">
+    <div class="form-wrapper">
+    <div class="container mt-5">
                 <h2>Administrar Árboles Amigo</h2>
                 <?php if (session()->getFlashdata('success')): ?>
                     <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
