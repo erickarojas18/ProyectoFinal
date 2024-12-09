@@ -48,7 +48,7 @@
   </ul>
 
   <!-- Formulario -->
-  <div class="login-container">
+  <div class="form-wrapper2">
     
       <h2>Registrar Especie</h2>
       <form method="post" action="<?= site_url('Especies/store') ?>">

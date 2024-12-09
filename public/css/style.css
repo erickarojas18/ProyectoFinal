@@ -29,6 +29,34 @@ h2 {
     border: rgba(169, 152, 152, 0.8);
    
 }
+/* CSS para las columnas */
+.login-container2 {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 900px;
+    background-color: rgba(169, 152, 152, 0.8); /* Fondo semi-transparente */
+    border-radius: 10px; /* Bordes redondeados */
+    border: rgba(169, 152, 152, 0.8);
+    display: flex; /* Activar Flexbox */
+    flex-wrap: wrap; /* Permitir el uso de múltiples líneas si es necesario */
+    justify-content: space-between; /* Espacio entre las columnas */
+}
+
+.form-group {
+    margin: 10px; /* Espaciado entre los elementos */
+}
+
+.column-left, .column-right {
+    flex-basis: 45%; /* Asignar un espacio igualitario a ambas columnas */
+}
+
+.column-left {
+    order: 1; /* Columna izquierda */
+}
+
+.column-right {
+    order: 2; /* Columna derecha */
+}
 
 
 /* Estilos comunes */
@@ -192,6 +220,22 @@ body {
 }
 
 
+.form-wrapper2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 20px; /* Espaciado interno generoso */
+    margin: 20px auto; /* Margen externo superior/inferior */
+    background-color: rgba(246, 242, 242, 0.8); /* Fondo semi-transparente */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    max-width: 30%; /* Se adapta al 90% del ancho de la pantalla */
+    width: auto; /* No limita el ancho mínimo o máximo directamente */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
+    min-height: 200px; /* Ajusta la altura mínima según el contenido */
+}
+
 
 
 
@@ -352,6 +396,7 @@ body {
     margin-right: 10px; /* Espaciado entre botones */
     vertical-align: middle; /* Alinear verticalmente los botones */
 }
+
 
 
 .form-container {

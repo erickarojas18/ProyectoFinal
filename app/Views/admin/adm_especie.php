@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?= base_url('css/style.css') ?>">
-  <title>Formulario con Menú de Navegación</title>
+  <title>Administar Especie</title>
 </head>
 <body class="login-back">
 
