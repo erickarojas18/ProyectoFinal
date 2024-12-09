@@ -14,13 +14,12 @@ class VistaModel extends Model
     
     public function cargarArbolesCompradosA()
     {
-        return $this->select('compras.id, compras.fecha_compra, arboles_dispo.especie, arboles_dispo.ubicacion, arboles_dispo.precio, arboles_dispo.imagen, 
-        arboles_dispo.tamano, especies.nombre_comercial, especies.nombre_cientifico')
-                    ->join('arboles_dispo', 'compras.arbol_id = arboles_dispo.id')
-                    ->join('especies', 'arboles_dispo.especie = especies.id')
-                    ->findAll();
+        return $this
+            ->select('compras.id, compras.user_id, compras.fecha_compra, arboles_dispo.especie, arboles_dispo.ubicacion, 
+                      arboles_dispo.precio, arboles_dispo.imagen, arboles_dispo.tamano, 
+                      especies.nombre_comercial, especies.nombre_cientifico')
+            ->join('arboles_dispo', 'compras.arbol_id = arboles_dispo.id')
+            ->join('especies', 'arboles_dispo.especie = especies.id')
+            ->findAll();
     }
-    
-    
-    
 }

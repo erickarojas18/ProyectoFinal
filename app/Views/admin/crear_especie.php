@@ -50,7 +50,7 @@
   <!-- Formulario -->
   <div class="login-container">
     
-      <h1><?= $title ?></h1>
+      <h2>Registrar Especie</h2>
       <form method="post" action="<?= site_url('Especies/store') ?>">
         <?= csrf_field() ?>
         <div class="form-group">

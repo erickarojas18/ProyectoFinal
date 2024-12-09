@@ -33,7 +33,7 @@ class Vista extends BaseController
         $arbolesComprados = $compraModel->cargarArbolesCompradosA(); // Método que cargará todos los árboles comprados por cualquier usuario
 
         // Pasar los datos a la vista
-        return view('usuarios/arboles_comprados', ['arboles' => $arbolesComprados]);
+        return view('admin/ver_arboles', ['arboles' => $arbolesComprados]);
     }
 
 

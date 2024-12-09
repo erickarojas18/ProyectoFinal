@@ -46,9 +46,9 @@
       <a href="<?= base_url('logout') ?>" class="nav-link">Logout</a>
     </li>
   </ul>
-
+  <div class="form-wrapper">
     <div class="container mt-5">
-        <h1><?= esc($title) ?></h1>
+        <h2>Administrar Especies</h2>
 
         <!-- Mostrar mensaje si está presente -->
         <?php if (!empty($msg)): ?>
@@ -75,10 +75,11 @@
                             <td><?= htmlspecialchars($especie['nombre_comercial']); ?></td>
                             <td><?= htmlspecialchars($especie['nombre_cientifico']); ?></td>
                             <td>
-                                <!-- Botones de acción -->
-                                <a href="<?= base_url("admin/editar_especie/{$especie['id']}"); ?>" class="btn btn-primary btn-sm">Editar</a>
-                                <a href="<?= base_url('Especies/delete/' . $especie['id']) ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar a esta especie?')">Eliminar</a>
-                            </td>
+    <!-- Botones de acción -->
+    <a href="<?= base_url("admin/editar_especie/{$especie['id']}"); ?>" class="btn-action btn-edit">Editar</a>
+    <a href="<?= base_url('Especies/delete/' . $especie['id']) ?>" class="btn-action btn-delete" onclick="return confirm('¿Estás seguro de eliminar a esta especie?')">Eliminar</a>
+</td>
+
                         </tr>
                     <?php endforeach; ?>
                 <?php else: ?>
@@ -88,6 +89,7 @@
                 <?php endif; ?>
             </tbody>
         </table>
+    </div>
     </div>
 
     <!-- jQuery and Bootstrap JS -->

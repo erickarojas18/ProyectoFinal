@@ -1,10 +1,12 @@
-/* Fondo para el formulario de registro */
-h1 {
-    color: green; /* Cambia el color del texto a verde */
-    font-size: 36px; /* Aumenta el tamaño de la fuente */
-    text-align: center; /* Centra el texto horizontalmente */
-    margin: 20px 0; /* Añade espacio arriba y abajo del título */
+h2 {
+    font-size: 1.8em; /* Tamaño de fuente grande */
+    color: #4A9B1C; /* Color verde oscuro */
+    text-align: center; /* Centrado */
+    margin: 10px 0; /* Espaciado superior e inferior */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Sombra de texto */
+    padding-bottom: 5px; /* Espaciado inferior */
 }
+
 
 .login-back { 
     background-image: url('/back.jpg');
@@ -177,14 +179,17 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center; /* Centra horizontalmente */
-    padding: 20px; /* Espaciado interno */
-    margin: 0 auto; /* Centra el contenedor en la página */
-    background-color: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+    justify-content: center; /* Centra verticalmente el contenido */
+    padding: 20px; /* Espaciado interno generoso */
+    margin: 20px auto; /* Margen externo superior/inferior */
+    background-color: rgba(220, 215, 215, 0.8); /* Fondo semi-transparente */
     border-radius: 15px; /* Bordes redondeados */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-    max-width: 600px; /* Ancho máximo */
-    width: 100%; /* Ancho completo en pantallas pequeñas */
+    max-width: 700px; /* Ancho máximo ajustado */
+    width: 90%; /* Se adapta a pantallas pequeñas */
+    box-sizing: border-box; /* Incluye padding y borde en el ancho total */
 }
+
 
 
 
@@ -343,31 +348,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
     margin-right: 10px; /* Espaciado entre botones */
     vertical-align: middle; /* Alinear verticalmente los botones */
-}
-
-/* Eliminar el margen derecho del último botón */
-.action-btn:last-child {
-    margin-right: 0; /* Sin margen derecho en el último botón */
-}
-
-/* Botón de editar */
-.edit-btn {
-    background-color: #FFC107; /* Color de fondo amarillo */
-}
-
-.edit-btn:hover {
-    background-color: #e0a800; /* Color más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación */
-}
-
-/* Botón de eliminar */
-.delete-btn {
-    background-color: #DC3545; /* Color de fondo rojo */
-}
-
-.delete-btn:hover {
-    background-color: #c82333; /* Color más oscuro al pasar el ratón */
-    transform: translateY(-2px); /* Efecto de elevación */
 }
 
 
@@ -537,3 +517,41 @@ body {
 
 
 
+/* Estilos comunes para los botones */
+.btn-action {
+    display: inline-block;
+    padding: 8px 15px; /* Espaciado interno */
+    font-size: 0.9em; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado de texto */
+    text-decoration: none; /* Sin subrayado */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s, transform 0.2s; /* Transiciones suaves */
+    cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+}
+
+/* Botón de Editar */
+.btn-edit {
+    background-color: #4CAF50; /* Verde */
+    color: white; /* Texto blanco */
+    border: 2px solid #4CAF50; /* Borde verde */
+}
+
+.btn-edit:hover {
+    background-color: white; /* Fondo blanco */
+    color: #4CAF50; /* Texto verde */
+    transform: scale(1.05); /* Ligero aumento */
+}
+
+/* Botón de Eliminar */
+.btn-delete {
+    background-color: #F44336; /* Rojo */
+    color: white; /* Texto blanco */
+    border: 2px solid #F44336; /* Borde rojo */
+}
+
+.btn-delete:hover {
+    background-color: white; /* Fondo blanco */
+    color: #F44336; /* Texto rojo */
+    transform: scale(1.05); /* Ligero aumento */
+}
