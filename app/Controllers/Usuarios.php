@@ -8,6 +8,7 @@ class Usuarios extends BaseController
 {
     public function registro()
     {
+    
         // Verifica si es un POST
         if ($this->request->getMethod() === 'post') {
             log_message('info', 'Formulario recibido');  // Añadir para depuración
@@ -44,13 +45,13 @@ class Usuarios extends BaseController
             ];
 
             // Insertar en la base de datos
-            $model = new UsuarioModel();
             if ($model->insert($data)) {
                 return redirect()->to(base_url('login'))->with('success', 'Usuario registrado exitosamente.');
             } else {
                 log_message('error', 'Error al registrar usuario: ' . json_encode($model->errors()));
                 return redirect()->back()->withInput()->with('error', 'Ocurrió un error al guardar el usuario.');
             }
+            
         }
 
         // Renderizar vista

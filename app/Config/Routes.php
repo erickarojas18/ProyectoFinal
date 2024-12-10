@@ -56,5 +56,5 @@ $routes->get('admin/ver_arboles', 'Vista::arbolesCompradosPorAmigos');
 //administrar arboles amigos
 
 $routes->get('admin/adm_arbol_amigo', 'Vista::index');
-$routes->match(['get', 'post'], 'admin/editar_arbol_amigo/(:num)', 'Vista::editarArbol/$1');
+$routes->match(['get', 'post'], 'admin/editar_arbol_amigo/(:num)', 'Vista::editarArbolAmigo/$1');
 $routes->get('Vista/eliminarArbol/(:num)', 'Vista::eliminarArbol/$1');
