@@ -81,7 +81,7 @@
                   
                        
                         
-                  <img src="../public/arboles/<?php echo htmlspecialchars($arbol['imagen']); ?>" alt="Imagen del árbol" style="width: 100px; height: auto;">
+                <img src="<?= base_url('../arboles/' . esc($arbol['imagen'])) ?>" alt="Imagen del árbol" class="img-fluid" style="max-height: 100px;">
 
                 <td>
                   <a href="<?= base_url('admin/editar_arbol/' . $arbol['id']) ?>" class="btn-action btn-edit">Editar</a>
