@@ -10,23 +10,26 @@ class Amigos extends BaseController
     public function index()
     {
         $usuarioModel = new UsuarioModel();
-        $amigos = $usuarioModel->findAll();
+        $amigos = $usuarioModel->findAll(); // Obtiene todos los amigos de la base de datos
+
+        // Podrías agregar una validación para manejar el caso donde no haya amigos registrados
 
         $data = [
             'title' => 'Lista de Amigos',
             'amigos' => $amigos
         ];
 
-        return view('admin/lista', $data);
+        return view('admin/lista', $data); // Renderiza la vista con los datos de amigos
     }
 
     public function editar($id)
     {
         $usuarioModel = new UsuarioModel();
-        $amigo = $usuarioModel->find($id);
+        $amigo = $usuarioModel->find($id); // Busca un amigo por su ID
 
+        // Podrías validar que el ID sea válido y no nulo antes de buscarlo en la base de datos
         if (!$amigo) {
-            return redirect()->to('/amigos')->with('error', 'Amigo no encontrado');
+            return redirect()->to('/amigos')->with('error', 'Amigo no encontrado'); // Maneja el caso donde no se encuentre el amigo
         }
 
         $data = [
@@ -34,42 +37,46 @@ class Amigos extends BaseController
             'amigo' => $amigo
         ];
 
-        return view('admin/editar', $data);
+        return view('admin/editar', $data); // Renderiza la vista para editar el amigo
     }
 
     public function actualizar($id)
     {
         $usuarioModel = new UsuarioModel();
         $data = [
-            'nombre' => $this->request->getPost('nombre'),
-            'apellidos' => $this->request->getPost('apellidos'),
-            'telefono' => $this->request->getPost('telefono'),
-            'email' => $this->request->getPost('email'),
-            'direccion' => $this->request->getPost('direccion'),
-            'pais' => $this->request->getPost('pais')
+            'nombre' => $this->request->getPost('nombre'), // Obtiene el nombre del formulario
+            'apellidos' => $this->request->getPost('apellidos'), // Obtiene los apellidos del formulario
+            'telefono' => $this->request->getPost('telefono'), // Obtiene el teléfono del formulario
+            'email' => $this->request->getPost('email'), // Obtiene el email del formulario
+            'direccion' => $this->request->getPost('direccion'), // Obtiene la dirección del formulario
+            'pais' => $this->request->getPost('pais') // Obtiene el país del formulario
         ];
 
+        // Sería útil validar los datos recibidos para evitar errores o inyecciones SQL
+
         if ($usuarioModel->update($id, $data)) {
-            return redirect()->to('/amigos')->with('success', 'Amigo actualizado correctamente');
+            return redirect()->to('/amigos')->with('success', 'Amigo actualizado correctamente'); // Mensaje de éxito
         } else {
-            return redirect()->to('/amigos')->with('error', 'No se pudo actualizar al amigo');
+            return redirect()->to('/amigos')->with('error', 'No se pudo actualizar al amigo'); // Mensaje de error
         }
     }
 
     public function eliminar($id)
     {
-       // Elimina primero las compras asociadas al amigo
-    $db = \Config\Database::connect();
-    $builder = $db->table('compras');
-    $builder->where('user_id', $id);
-    $builder->delete(); // Elimina las compras asociadas al amigo
+        // Elimina primero las compras asociadas al amigo
+        $db = \Config\Database::connect();
+        $builder = $db->table('compras');
+        $builder->where('user_id', $id); // Filtra las compras por el ID del usuario
+        $builder->delete(); // Elimina las compras asociadas al amigo
 
-    // Luego elimina el amigo
-    $usuarioModel = new UsuarioModel();
-    if ($usuarioModel->delete($id)) {
-        return redirect()->to('/amigos')->with('success', 'Amigo eliminado correctamente');
-    } else {
-        return redirect()->to('/amigos')->with('error', 'No se pudo eliminar al amigo');
-    }
+        // Podrías revisar si necesitas manejar relaciones en cascada para evitar inconsistencias
+
+        // Luego elimina el amigo
+        $usuarioModel = new UsuarioModel();
+        if ($usuarioModel->delete($id)) {
+            return redirect()->to('/amigos')->with('success', 'Amigo eliminado correctamente'); // Mensaje de éxito
+        } else {
+            return redirect()->to('/amigos')->with('error', 'No se pudo eliminar al amigo'); // Mensaje de error
+        }
     }
 }

@@ -38,20 +38,37 @@ class ArbolesDisponibles extends BaseController
     public function guardar()
     {
         $arbolModel = new ArbolDisponibleModel();
-    
+        
         // Obtener datos del formulario
         $data = $this->request->getPost();
-    
+        
+        // Manejar la subida de la imagen
+        $file = $this->request->getFile('imagen');
+        
+        if ($file && $file->isValid() && !$file->hasMoved()) {
+            // Generar un nombre único para la imagen
+            $newName = $file->getRandomName();
+            
+            // Mover la imagen a la carpeta de destino
+            $file->move(WRITEPATH . 'uploads/arboles', $newName);
+            
+            // Guardar el nombre de la imagen en los datos a insertar
+            $data['imagen'] = $newName;
+        } else {
+            return redirect()->back()->withInput()->with('error', 'Error al subir la imagen.');
+        }
+        
         // Asegurarse de que el estado sea siempre 1
         $data['estado'] = 1;
-    
+        
         // Validar los datos antes de guardar
         if (!$arbolModel->insert($data)) {
             return redirect()->back()->withInput()->with('errors', $arbolModel->errors());
         }
-    
+        
         return redirect()->to('/arbol')->with('success', 'Árbol registrado correctamente.');
     }
+    
     
 
 
@@ -84,6 +101,7 @@ class ArbolesDisponibles extends BaseController
 
         return redirect()->to('/arbol')->with('success', 'Árbol actualizado correctamente.');
     }
+    
     public function eliminar($id)
     {
         $arbolModel = new ArbolDisponibleModel();
