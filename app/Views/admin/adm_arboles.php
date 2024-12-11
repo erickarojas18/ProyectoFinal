@@ -75,6 +75,7 @@
                 <td><?= esc($arbol['ubicacion']) ?></td>
                 <td><?= esc($arbol['tamano']) ?></td>
                 <td>$<?= esc($arbol['precio']) ?></td>
+               
 
                 
                 <td>
