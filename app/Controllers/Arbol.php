@@ -2,16 +2,15 @@
 
 namespace App\Controllers;
 
-// Define el espacio de nombres para la clase, lo que organiza el código y evita conflictos con otras clases de nombres similares.
 
 use App\Models\ArbolDisponibleModel;
 use App\Models\ComprasModel;
 
-// Importa dos modelos para manejar datos relacionados con árboles disponibles y compras.
+
 
 class Arbol extends BaseController
 {
-    // La clase extiende `BaseController`, que es una clase base común en frameworks como CodeIgniter.
+  
     
     public function index()
     {
