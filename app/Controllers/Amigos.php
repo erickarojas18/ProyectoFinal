@@ -12,7 +12,6 @@ class Amigos extends BaseController
         $usuarioModel = new UsuarioModel();
         $amigos = $usuarioModel->findAll(); // Obtiene todos los amigos de la base de datos
 
-        // Podrías agregar una validación para manejar el caso donde no haya amigos registrados
 
         $data = [
             'title' => 'Lista de Amigos',
@@ -52,7 +51,7 @@ class Amigos extends BaseController
             'pais' => $this->request->getPost('pais') // Obtiene el país del formulario
         ];
 
-        // Sería útil validar los datos recibidos para evitar errores o inyecciones SQL
+      
 
         if ($usuarioModel->update($id, $data)) {
             return redirect()->to('/amigos')->with('success', 'Amigo actualizado correctamente'); // Mensaje de éxito
